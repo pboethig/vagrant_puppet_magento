@@ -1,3 +1,7 @@
+Prerequisists
+- Installed Virtualbox
+- Installed Vagrant
+
 Known Issues:
 - magerun missing
 - versionswich of magento missing
