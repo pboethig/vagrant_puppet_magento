@@ -6,6 +6,10 @@ Puppet installes on the client-os
 - apache 2.4
 - look in puppetconfig to extend client (redis, rabbitmq, python and some more default puphpet packages are preconfigured and only have to activated for installation )
 
+if you are using vagrant 1.8.0 or 1.8.1 you have to fix an rsync error
+here is the link how to fix it:
+http://magento2-tuts.blogspot.de/2016/02/vagrant-180-and-181-throws-error-on.html
+
 Installed Magento-Packages
 Magentoversion: 1.9.2.3 Core
 - some usefull modules will follow
