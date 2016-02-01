@@ -10,6 +10,14 @@ if you are using vagrant 1.8.0 or 1.8.1 you have to fix an rsync error
 here is the link how to fix it:
 http://magento2-tuts.blogspot.de/2016/02/vagrant-180-and-181-throws-error-on.html
 
+
+if you this composer error during proviosioning:
+Error: curl -s http://getcomposer.org/installer | php returned 255 instead of one of [0]
+
+This is the fix for that
+https://github.com/puphpet/puppet-puphpet/commit/659fc6d6548dd8158fdac7bb834111c769854a98
+
+
 Installed Magento-Packages
 Magentoversion: 1.9.2.3 Core
 - some usefull modules will follow
