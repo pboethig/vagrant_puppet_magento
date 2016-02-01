@@ -13,6 +13,7 @@ Magentoversion: 1.9.2.3 Core
 Prerequisists
 - Installed Virtualbox
 - Installed Vagrant
+- Installed Vargant Hostmanager "vagrant plugin install vagrant-hostmanager"
 
 Known Issues:
 - magerun missing
