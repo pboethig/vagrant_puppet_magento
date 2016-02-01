@@ -3,9 +3,9 @@ Known Issues:
 - versionswich of magento missing
 
 Usage:
-1) checkout sources
-2) vagrant up
-3) http://magento.local:8888 or http://localost:8888 reaches the client
+- checkout sources
+- vagrant up
+- browse: http://magento.local:8888 or http://localost:8888 reaches the client
 
 Installed Packages
 
