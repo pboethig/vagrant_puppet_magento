@@ -38,7 +38,7 @@ vagrantfile:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
             vflsf_fdrh0afis3x0:
-                source: ./magento/1.9.2.3
+                source: ./3rdpartymodules
                 target: /var/www/html/
                 sync_type: rsync
                 smb:
@@ -82,7 +82,7 @@ vagrantfile:
                 owner: www-data
                 group: www-data
             vflsf_lsfihwi0jdmc:
-                source: ./3rdpartymodules
+                source: ./magento/1.9.2.3
                 target: /var/www/html/
                 sync_type: rsync
                 smb:
@@ -328,14 +328,14 @@ drush:
     install: '0'
     version: 6.3.0
 ruby:
-    install: '1'
+    install: '0'
     versions:
         rv_2fjzo4uj7tx3:
             default: '1'
             bundler: '1'
             version: 1.9.3
 python:
-    install: '1'
+    install: '0'
     packages: {  }
     versions: {  }
 nodejs:
