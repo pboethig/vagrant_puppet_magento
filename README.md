@@ -4,7 +4,7 @@ Puppet installes on the client-os
 - MariaDB (Dropin replacement for MySql)
 - php 5.6 (PHP-FPM) 
 - apache 2.4
-look in puppetconfig to extend packages (rdis, rebbitmq, pthon and some more are available. )
+- look in puppetconfig to extend packages (rdis, rebbitmq, pthon and some more are available. )
 
 Installed Magento-Packages
 Magentoversion: 1.9.2.3 Core
