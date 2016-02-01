@@ -10,7 +10,7 @@ Installed Magento-Packages
 Magentoversion: 1.9.2.3 Core
 - some usefull modules will follow
 
-Prerequisists
+Prerequisits
 - Installed Virtualbox
 - Installed Vagrant
 - Installed Vargant Hostmanager "vagrant plugin install vagrant-hostmanager"
