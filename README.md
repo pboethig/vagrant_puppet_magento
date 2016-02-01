@@ -4,13 +4,25 @@ Puppet installes on the client-os
 - MariaDB (Dropin replacement for MySql)
 - php 5.6 (PHP-FPM) 
 - apache 2.4
-look in puppetconfig to extend packages (rdis, rebbitmq, pthon and some more are available. )
+- look in puppetconfig to extend client (redis, rabbitmq, python and some more default puphpet packages are preconfigured and only have to activated for installation )
+
+if you are using vagrant 1.8.0 or 1.8.1 you have to fix an rsync error
+here is the link how to fix it:
+http://magento2-tuts.blogspot.de/2016/02/vagrant-180-and-181-throws-error-on.html
+
+
+if you this composer error during proviosioning:
+Error: curl -s http://getcomposer.org/installer | php returned 255 instead of one of [0]
+
+This is the fix for that
+https://github.com/puphpet/puppet-puphpet/commit/659fc6d6548dd8158fdac7bb834111c769854a98
+
 
 Installed Magento-Packages
 Magentoversion: 1.9.2.3 Core
 - some usefull modules will follow
 
-Prerequisists
+Prerequisits
 - Installed Virtualbox
 - Installed Vagrant
 - Installed Vargant Hostmanager "vagrant plugin install vagrant-hostmanager"
@@ -23,6 +35,6 @@ Known Issues:
 Usage:
 - checkout sources
 - vagrant up
-- browse: http://magento.local:8888 or http://localost:8888 reaches the client
+- browse: http://magento.local:8888 or http://localhost:8888 reaches the client
 
 
