@@ -1,3 +1,6 @@
+This is a vagrant image to virtualize a common magento installation.
+
+
 Prerequisists
 - Installed Virtualbox
 - Installed Vagrant
