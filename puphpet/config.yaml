@@ -15,9 +15,9 @@ vagrantfile:
                     host: '20222'
                     guest: '22'
                 vflnp_srry4zzrf59j:
-                    host: '8888'
+                    host: '9999'
                     guest: '80'
-        post_up_message: ''
+        post_up_message: 'done. you can reach you magento on http://magento.local/index.php'
         provider:
             virtualbox:
                 modifyvm:
@@ -46,8 +46,8 @@ vagrantfile:
                     smb_username: ''
                     smb_password: ''
                     mount_options:
-                        dir_mode: '0775'
-                        file_mode: '0664'
+                        dir_mode: '777'
+                        file_mode: '777'
                 rsync:
                     args:
                         - '--verbose'
@@ -68,8 +68,8 @@ vagrantfile:
                     smb_username: ''
                     smb_password: ''
                     mount_options:
-                        dir_mode: '0775'
-                        file_mode: '0664'
+                        dir_mode: '777'
+                        file_mode: '777'
                 rsync:
                     args:
                         - '--verbose'
@@ -90,7 +90,8 @@ vagrantfile:
                     smb_username: ''
                     smb_password: ''
                     mount_options:
-                        dir_mode: '0775'
+                        dir_mode: '777'
+                        file_mode: '777'
                 rsync:
                     args:
                         - '--verbose'
@@ -100,8 +101,8 @@ vagrantfile:
                         - .vagrant/
                         - .git/
                     auto: 'true'
-                owner: www-data
-                group: www-data
+                owner: vagrant
+                group: vagrant
         usable_port_range:
             start: 10200
             stop: 10500
