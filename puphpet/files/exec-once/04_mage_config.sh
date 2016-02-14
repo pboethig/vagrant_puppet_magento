@@ -2,19 +2,32 @@
 storagePath=/vagrant/puphpet/files/databases
 backupStorage="$storagePath/backup"
 
+#configfile found under puphpet/files/config/config.ini
+#type iniconfig -a to get all configitems. Type ./getconfig -h for help
+##############################################################################################################################################################################################################################################################################
 #set enviroment. availabe dev production stage
 enviroment=dev
-
+##############################################################################################################################################################################################################################################################################
 #generate local.xml
 echo  "exec 04_mage_config"
-cd /var/www/magento
-sudo rm -rf /tmp/magento/var #prevent varning from n98
 
-#type iniconfig -a to get all configitems. Type ./getconfig -h for help
-#configfile found under puphpet/files/config/config.ini
-##############################################################################################################################################################################################################################################################################
+echo  "set accessrights 0777 for dev"
+sudo chmod -R 777 `iniconfig $enviroment filesystem documentroot`
+
+#change to webroot to get n98-magerun in the right location
+cd `iniconfig $enviroment filesystem documentroot`
+
+echo  "remove /tmp/magento/var"
+sudo rm -rf /tmp/magento/var
+
+
+echo  "delete `iniconfig $enviroment filesystem documentroot`/app/etc/local.xml to prevent sql exception on wrong accessdata"
+sudo rm -rf `iniconfig $enviroment filesystem documentroot`/app/etc/local.xml
+
+echo  "genetrate new local.xml"
 n98-magerun local-config:generate `iniconfig $enviroment database host` `iniconfig $enviroment database username` `iniconfig $enviroment database password` `iniconfig $enviroment database name` `iniconfig $enviroment session save`  `iniconfig $enviroment store frontname`
-
+##############################################################################################################################################################################################################################################################################
+# Setting storeconfigs
 #baseurls
 n98-magerun config:set web/secure/base_url `iniconfig $enviroment storeconfig web/secure/base_url`
 n98-magerun config:set web/unsecure/base_url `iniconfig $enviroment storeconfig web/unsecure/base_url`
