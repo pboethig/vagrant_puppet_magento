@@ -2,16 +2,10 @@
 storagePath=/vagrant/puphpet/files/databases
 backupStorage="$storagePath/backup"
 
-#type ./getconfig -a to get all configitems. Type ./getconfig -h for help
-cd ./
-
-
-
-sudo chmod -R 777 /vagrant/puphpet/files/exec-once
-username=`php /vagrant/puphpet/files/libraries/IniParser/src/getconfig.php dev database username`
-password=`php /vagrant/puphpet/files/libraries/IniParser/src/getconfig.php dev database password`
-databasename=`php /vagrant/puphpet/files/libraries/IniParser/src/getconfig.php dev database name`
-
+#type iniconfig -a to get all configitems. Type ./getconfig -h for help
+username=`iniconfig dev database username`
+password=`iniconfig dev database password`
+databasename=`iniconfig dev database name`
 
 if [ -f "$storagePath/database.sql.gz" ]
 then

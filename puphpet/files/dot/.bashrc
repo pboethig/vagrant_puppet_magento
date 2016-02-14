@@ -52,3 +52,7 @@ alias rm='rm -i'
 alias mv='mv -iv'
 alias grep='grep --color=auto -in'
 alias ..='cd ..'
+iniconfig() {
+    php /vagrant/puphpet/files/libraries/IniParser/src/getconfig.php "$@"
+}
+export -f iniconfig
