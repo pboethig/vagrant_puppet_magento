@@ -2,28 +2,55 @@
 storagePath=/vagrant/puphpet/files/databases
 backupStorage="$storagePath/backup"
 
+#set enviroment to deb
+enviroment=dev
+
 #type iniconfig -a to get all configitems. Type ./getconfig -h for help
-username=`iniconfig dev database username`
-password=`iniconfig dev database password`
-databasename=`iniconfig dev database name`
+username=`iniconfig $enviroment database username`
+password=`iniconfig $enviroment database password`
+databasename=`iniconfig $enviroment database name`
 
-if [ -f "$storagePath/database.sql.gz" ]
+#if samopledata installation was activated (@see config.ini)
+if [ "`iniconfig $enviroment sampledata install`" == "1" ]
 then
-    echo "backup current database under:$backupStorage"
+    #core database
+    if [ -f "$storagePath/database.sql.gz" ]
+    then
 
-    mysqldump -u$username -p$password $databasename | gzip >"/$backupStorage/database_$date.sql.gz"
+        echo "##########################Install Sampledata for magento#####################################"
 
-    mysql -u $username -p$password -e "DROP DATABASE IF EXISTS $databasename"
+        echo "backup current database under:$backupStorage"
 
-    mysql -u$username -p$password -e "CREATE DATABASE $databasename"
+        mysqldump -u$username -p$password $databasename | gzip >"/$backupStorage/database_bak.sql.gz"
 
-    echo "unpacking dump under:$storagePath/database.sql"
+        mysql -u $username -p$password -e "DROP DATABASE IF EXISTS $databasename"
 
-    gunzip -c $storagePath/database.sql.gz > $storagePath/database.sql
+        mysql -u$username -p$password -e "CREATE DATABASE $databasename"
 
-    echo "importing dump under: $storagePath/database.sql.gz"
+        echo "unpacking dump under:$storagePath/database.sql"
 
-    mysql -u$username -p$password $databasename <$storagePath/database.sql
+        gunzip -c $storagePath/database.sql.gz > $storagePath/database.sql
 
-    rm -rf $storagePath/database.sql
+        echo "importing dump under: $storagePath/database.sql.gz"
+
+        mysql -u$username -p$password $databasename <$storagePath/database.sql
+
+        rm -rf $storagePath/database.sql
+
+
+        # copy sampledatacodebase to magento root
+        echo "copiing sampledata to magentoroot"
+
+        sourcePath=/vagrant/puphpet/files/magentosampledata/*
+        targetPath=`iniconfig $enviroment filesystem documentroot`
+        echo "sampledatapath: $sourcePath"
+        echo "targetPath: $targetPath"
+
+        cp -fr $sourcePath $targetPath
+    fi
+
+    cd $targetPath
+    n98-magerun cache:clean
+
 fi
+
