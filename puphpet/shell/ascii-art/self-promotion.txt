@@ -10,7 +10,7 @@ dP  88888888P dP       `88888P8 dP  dP  dP `88888P'
 
 the brandprofis uses puphpet.com for provisioning dev-enviroments
 
-visit www.ibrams.comvagrant
+visit http://www.ibrams.com
 oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 

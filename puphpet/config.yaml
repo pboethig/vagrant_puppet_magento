@@ -229,6 +229,7 @@ php:
             - intl
             - curl
             - gd
+            - mcrypt
         pear: {  }
         pecl: {  }
     ini:
