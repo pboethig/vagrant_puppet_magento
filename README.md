@@ -24,9 +24,9 @@ Usage:
 
 Addition:
 - you can configure the installation by editing /vagrant/puphpet/files/config/config.ini
+  the most imporant storeconfig parameter are configurable during provisioning the box
 
-following parameters are available
 
-<script src="https://gist.github.com/pboethig/b2883e149ce353784051.js"></script>
+
 
 
