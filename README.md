@@ -24,6 +24,10 @@ Usage:
 - browse: http://magento.dev or http://localhost reaches the client
 
 
+See my blog for further installation information
+http://magento2-tuts.blogspot.de/2016/02/setup-magento-with-vagrant-and-puppet.html
+
+
 Addition:
 - you can configure the installation by editing /vagrant/puphpet/files/config/config.ini
   the most imporant storeconfig parameter are configurable during provisioning the box

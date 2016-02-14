@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bae09532-d207-408b-b43d-81a3c322af93" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh" afterPath="$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puphpet/files/exec-once/04_mage_config.sh" afterPath="$PROJECT_DIR$/puphpet/files/exec-once/04_mage_config.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/action_provision" afterPath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/action_provision" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/action_set_name" afterPath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/action_set_name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/id" afterPath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/id" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/index_uuid" afterPath="$PROJECT_DIR$/.vagrant/machines/local/virtualbox/index_uuid" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vagrant_puppet_magento.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +37,18 @@
       <file leaf-file-name="04_mage_config.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/puphpet/files/exec-once/04_mage_config.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9611651" vertical-offset="459" max-vertical-offset="1458">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.23300971" vertical-offset="0" max-vertical-offset="1638">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.72" vertical-offset="0" max-vertical-offset="792">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -41,8 +57,8 @@
       <file leaf-file-name="03-generate-local.xml.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.84" vertical-offset="0" max-vertical-offset="504">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.64" vertical-offset="0" max-vertical-offset="504">
+              <caret line="12" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,6 +84,7 @@
       <list>
         <option value="$PROJECT_DIR$/puphpet/files/config/local.xml" />
         <option value="$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/puphpet/files/exec-once/04_mage_config.sh" />
       </list>
     </option>
@@ -78,9 +95,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -245,12 +262,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25261998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -291,6 +308,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/puphpet/files/exec-once/04_mage_config.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="504">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/puphpet/files/config/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
@@ -299,18 +332,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/puphpet/files/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.72" vertical-offset="0" max-vertical-offset="792">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/puphpet/files/exec-once/03-generate-local.xml.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.84" vertical-offset="0" max-vertical-offset="504">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.64" vertical-offset="0" max-vertical-offset="504">
+          <caret line="12" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puphpet/files/exec-once/04_mage_config.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9611651" vertical-offset="459" max-vertical-offset="1458">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.23300971" vertical-offset="0" max-vertical-offset="1638">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding />
         </state>
       </provider>
