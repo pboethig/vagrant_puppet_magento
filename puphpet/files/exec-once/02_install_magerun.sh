@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo wget http://files.magerun.net/n98-magerun-latest.phar
+sudo wget -q http://files.magerun.net/n98-magerun-latest.phar
 chmod +x ./n98-magerun-latest.phar
 sudo cp ./n98-magerun-latest.phar /usr/local/bin/n98-magerun
 

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ibrams_CmsExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Ibrams
+ * @package        Ibrams_CmsExtended
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+    <default>
+    <reference name="head">
+        <action method="addCss"><js>css/ibrams_cmsextended/tree.css</js></action>
+    </reference>
+    </default>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="ibrams_cmsextended"><name>cmspage_comments</name><path>ibrams_cmsextended/cmspage_customer_comment</path><label>cmspages Comments</label></action>
+        </reference>
+    </customer_account>
+    <ibrams_cmsextended_cmspage_index translate="label" module="ibrams_cmsextended">
+        <label>Cmspages list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="head">
+            <action method="addItem" ifconfig="ibrams_cmsextended/cmspage/tree"><type>skin_js</type><js>js/ibrams_cmsextended/tree.js</js></action>
+        </reference>
+        <reference name="content">
+            <block type="ibrams_cmsextended/cmspage_list" name="cmspage_list" template="ibrams_cmsextended/cmspage/list.phtml" />
+        </reference>
+    </ibrams_cmsextended_cmspage_index>
+    <ibrams_cmsextended_cmspage_view translate="label" module="ibrams_cmsextended">
+        <label>Cmspage view page</label>
+        <update handle="page_two_columns_left" />
+        <reference name="head">
+            <action method="addItem" ifconfig="ibrams_cmsextended/cmspage/tree"><type>skin_js</type><js>js/ibrams_cmsextended/tree.js</js></action>
+        </reference>
+        <reference name="content">
+            <block type="ibrams_cmsextended/cmspage_view" name="cmspage_view" template="ibrams_cmsextended/cmspage/view.phtml" />
+            <block type="ibrams_cmsextended/cmspage_children" name="cmspage_children" template="ibrams_cmsextended/cmspage/children.phtml" />
+            <block type="ibrams_cmsextended/cmspage_catalog_product_list" name="cmspage.info.products" as="cmspage_products" template="ibrams_cmsextended/cmspage/catalog/product/list.phtml" />
+            <block type="ibrams_cmsextended/cmspage_catalog_category_list" name="cmspage.info.categories" as="cmspage_categories" template="ibrams_cmsextended/cmspage/catalog/category/list.phtml" />
+            <block type="ibrams_cmsextended/cmspage_comment_list" name="cmspage.comments_list" as="cmspage_comment_list" template="ibrams_cmsextended/cmspage/comment/list.phtml">
+                <block type="ibrams_cmsextended/cmspage_comment_form" name="comment_form" as="comment_form" template="ibrams_cmsextended/cmspage/comment/form.phtml" />
+            </block>
+        </reference>
+    </ibrams_cmsextended_cmspage_view>
+    <ibrams_cmsextended_cmspage_rss translate="label" module="ibrams_cmsextended">
+        <label>Cmspages rss feed</label>
+        <block type="ibrams_cmsextended/cmspage_rss" output="toHtml" name="ibrams_cmsextended.cmspage.rss" />
+    </ibrams_cmsextended_cmspage_rss>
+    <rss_index_index>
+        <reference name="content">
+            <block type="ibrams_cmsextended/rss" name="cmsextended.rss" template="ibrams_cmsextended/rss.phtml">
+                <action method="addFeed" ifconfig="ibrams_cmsextended/cmspage/rss" translate="label" module="ibrams_cmsextended">
+                    <label>Cmspages</label>
+                    <url helper="ibrams_cmsextended/cmspage/getRssUrl" />
+                </action>
+            </block>
+        </reference>
+    </rss_index_index>
+    <catalog_product_view>
+        <reference name="product.info">
+            <block type="ibrams_cmsextended/catalog_product_list_cmspage" name="product.info.cmspages" as="product_cmspages" template="ibrams_cmsextended/catalog/product/list/cmspage.phtml">
+                <action method="addToParentGroup"><group>detailed_info</group></action>
+                <action method="setTitle" translate="value" module="ibrams_cmsextended"><value>cmspages</value></action>
+            </block>
+        </reference>
+    </catalog_product_view>
+    <ibrams_cmsextended_category>
+        <reference name="content">
+            <block type="ibrams_cmsextended/catalog_category_list_cmspage" name="category.info.cmspages" as="category_cmspages" template="ibrams_cmsextended/catalog/category/list/cmspage.phtml" after="-" />
+        </reference>
+    </ibrams_cmsextended_category>
+    <catalog_category_default>
+        <update handle="ibrams_cmsextended_category" />
+    </catalog_category_default>
+    <catalog_category_layered>
+        <update handle="ibrams_cmsextended_category" />
+    </catalog_category_layered>
+    <ibrams_cmsextended_cmspage_customer_comment_index translate="label" module="ibrams_cmsextended">
+        <label>My Cmspages comments</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="ibrams_cmsextended/cmspage_customer_comment_list" name="customer_cmspage_comments" template="ibrams_cmsextended/cmspage/customer/comment/list.phtml"/>
+        </reference>
+    </ibrams_cmsextended_cmspage_customer_comment_index>
+    <ibrams_cmsextended_cmspage_customer_comment_view translate="label" module="ibrams_cmsextended">
+        <label>My Cmspages comment view</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="ibrams_cmsextended/cmspage_customer_comment_view" name="customer_cmspage_comment" template="ibrams_cmsextended/cmspage/customer/comment/view.phtml"/>
+        </reference>
+    </ibrams_cmsextended_cmspage_customer_comment_view>
+</layout>

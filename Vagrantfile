@@ -8,7 +8,6 @@ require "#{dir}/puphpet/ruby/puppet.rb"
 
 configValues = YAML.load_file("#{dir}/puphpet/config.yaml")
 
-
 provider = ENV['VAGRANT_DEFAULT_PROVIDER']
 if File.file?("#{dir}/puphpet/config-#{provider}.yaml")
   custom = YAML.load_file("#{dir}/puphpet/config-#{provider}.yaml")

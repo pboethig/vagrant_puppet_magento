@@ -4,7 +4,8 @@ class puphpet_mariadb (
   $nginx,
   $php,
   $hhvm
-) {
+)
+ {
 
   include puphpet::apache::params
   include puphpet::mysql::params
@@ -156,20 +157,7 @@ class puphpet_mariadb (
 
     create_resources( mysql_database, { "${name}" => $merged })
 
-    if $sql != '' {
-      # Run import only on initial database creation
-      $touch_file = "/.puphpet-stuff/db-import-${name}"
 
-      exec{ "${name}-import":
-        command     => "mysql ${name} < ${sql} && touch ${touch_file}",
-        creates     => $touch_file,
-        logoutput   => true,
-        environment => "HOME=${::root_home}",
-        path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin',
-        timeout     => $import_timeout,
-        require     => Mysql_database[$name]
-      }
-    }
   }
 
   # config file could contain no grants key
@@ -210,6 +198,8 @@ class puphpet_mariadb (
     } elsif $::lsbdistcodename == 'lucid' or $::lsbdistcodename == 'squeeze' {
       $php_module = 'mysql'
     } elsif $::osfamily == 'debian' and $php['settings']['version'] in ['7.0', '70'] {
+      $php_module = 'mysql'
+    } elsif $::operatingsystem == 'ubuntu' and $php['settings']['version'] in ['5.6', '56'] {
       $php_module = 'mysql'
     } else {
       $php_module = 'mysqlnd'

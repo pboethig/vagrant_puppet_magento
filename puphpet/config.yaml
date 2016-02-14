@@ -3,21 +3,21 @@ vagrantfile:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: magento.local
-        memory: '512'
+        hostname: magento.dev
+        memory: '1024'
         cpus: '1'
         chosen_provider: virtualbox
         box_version: ''
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                vflnp_7zpy5xchgnt3:
-                    host: '20222'
+                vflnp_f12x65ord6uf:
+                    host: '2022'
                     guest: '22'
-                vflnp_srry4zzrf59j:
-                    host: '9999'
+                vflnp_mubsxwemgm1o:
+                    host: '8080'
                     guest: '80'
-        post_up_message: 'done. you can reach you magento on http://magento.local/index.php'
+        post_up_message: ''
         provider:
             virtualbox:
                 modifyvm:
@@ -37,17 +37,17 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_fdrh0afis3x0:
-                source: ./3rdpartymodules
-                target: /var/www/html/
+            vflsf_hmp8zph5gwgw:
+                source: ./workingbase
+                target: /var/www/magento
                 sync_type: rsync
                 smb:
                     smb_host: ''
                     smb_username: ''
                     smb_password: ''
                     mount_options:
-                        dir_mode: '777'
-                        file_mode: '777'
+                        dir_mode: '0775'
+                        file_mode: '0664'
                 rsync:
                     args:
                         - '--verbose'
@@ -59,50 +59,6 @@ vagrantfile:
                     auto: 'true'
                 owner: www-data
                 group: www-data
-            vflsf_pp6yhrr6qxkt:
-                source: ./projectsources
-                target: /var/www/html/
-                sync_type: default
-                smb:
-                    smb_host: ''
-                    smb_username: ''
-                    smb_password: ''
-                    mount_options:
-                        dir_mode: '777'
-                        file_mode: '777'
-                rsync:
-                    args:
-                        - '--verbose'
-                        - '--archive'
-                        - '-z'
-                    exclude:
-                        - .vagrant/
-                        - .git/
-                    auto: 'true'
-                owner: www-data
-                group: www-data
-            vflsf_lsfihwi0jdmc:
-                source: ./magento/1.9.2.3
-                target: /var/www/html/
-                sync_type: rsync
-                smb:
-                    smb_host: ''
-                    smb_username: ''
-                    smb_password: ''
-                    mount_options:
-                        dir_mode: '777'
-                        file_mode: '777'
-                rsync:
-                    args:
-                        - '--verbose'
-                        - '--archive'
-                        - '-z'
-                    exclude:
-                        - .vagrant/
-                        - .git/
-                    auto: 'true'
-                owner: vagrant
-                group: vagrant
         usable_port_range:
             start: 10200
             stop: 10500
@@ -128,8 +84,8 @@ vagrantfile:
 server:
     install: '1'
     packages:
-        - apt
-        - curl
+        - vim
+        - htop
 users_groups:
     install: '1'
     groups: {  }
@@ -137,11 +93,10 @@ users_groups:
 locale:
     install: '1'
     settings:
-        default_locale: de_DE.UTF-8
+        default_locale: en_US.UTF-8
         locales:
             - en_GB.UTF-8
             - en_US.UTF-8
-            - de_DE.UTF-8
         timezone: UTC
 firewall:
     install: '1'
@@ -161,11 +116,11 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_yv8k76rlazxb:
-            server_name: awesome.dev
+        nxv_glexjr91sabs:
+            server_name: magento.dev
             server_aliases:
-                - www.awesome.dev
-            www_root: /var/www/html
+                - www.magento.dev
+            www_root: /var/www/magento
             listen_port: '80'
             index_files:
                 - index.html
@@ -181,7 +136,7 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_ecggddl00ene:
+                nxvl_l00mg6b6jf5j:
                     location: /
                     autoindex: 'off'
                     internal: 'false'
@@ -194,7 +149,7 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_ltpyca1ao4v8:
+                nxvl_k6bmnplvt4km:
                     location: '~ \.php$'
                     autoindex: 'off'
                     internal: 'false'
@@ -227,9 +182,11 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_6w0yvffogiqx:
-            servername: magento.local
-            docroot: /var/www/html
+        av_dfncwe1okbik:
+            servername: magento.dev
+            serveraliases:
+                - www.magento.dev
+            docroot: /var/www/magento
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -244,18 +201,19 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_hpri0rmi7nyt:
-                    path: /var/www/html
+                avd_qmgwcv5s11qr:
+                    path: /var/www/magento
                     options:
                         - Indexes
                         - FollowSymlinks
+                        - MultiViews
                     allow_override:
                         - All
                     require:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_h6xh5agqquil:
+                        avdfm_fyu3q6b1h549:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -269,15 +227,6 @@ php:
         php:
             - cli
             - intl
-            - common
-            - gd
-            - soap
-            - curl
-            - xmlrpc
-            - mcrypt
-            - memcache
-            - ldap
-            - mysql
         pear: {  }
         pecl: {  }
     ini:
@@ -288,7 +237,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_jltjnjx2y198:
+        phpfp_q63dlf6ympha:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -329,14 +278,12 @@ drush:
     install: '0'
     version: 6.3.0
 ruby:
-    install: '0'
+    install: '1'
     versions:
-        rv_2fjzo4uj7tx3:
-            default: '1'
-            bundler: '1'
-            version: 1.9.3
+        rv_r3ia2ap567g6:
+            version: ''
 python:
-    install: '0'
+    install: '1'
     packages: {  }
     versions: {  }
 nodejs:
@@ -367,15 +314,14 @@ mariadb:
         override_options: {  }
     adminer: 0
     users:
-        mariadbnu_fjjfxioqv8d3:
+        mariadbnu_fyzj4ocg305f:
             name: dbuser
-            password: ibadmin
+            password: '123'
     databases:
-        mariadbnd_nj1fm81h9c00:
+        mariadbnd_4s5u5dlk9e35:
             name: magento
-            sql: /var/www/html/database.sql
     grants:
-        mariadbng_8cna1c2i3zmu:
+        mariadbng_dny8a7b1zla1:
             user: dbuser
             table: '*.*'
             privileges:
@@ -388,15 +334,15 @@ mysql:
         override_options: {  }
     adminer: 0
     users:
-        mysqlnu_blwspr86cd99:
+        mysqlnu_rnormybi8qsy:
             name: dbuser
             password: '123'
     databases:
-        mysqlnd_5rxdtqr29bxr:
+        mysqlnd_hjs1m25oatv1:
             name: dbname
             sql: ''
     grants:
-        mysqlng_vympm9zk43qz:
+        mysqlng_fx28va99h6ho:
             user: dbuser
             table: '*.*'
             privileges:
@@ -416,7 +362,6 @@ postgresql:
 mongodb:
     install: '0'
     settings:
-        auth: 1
         bind_ip: 127.0.0.1
         port: '27017'
     globals:
@@ -462,7 +407,7 @@ elastic_search:
         version: 2.1.0
         java_install: true
     instances:
-        esi_czv28rbus0l4:
+        esi_7274b6yq91cx:
             name: es-01
 solr:
     install: '0'
