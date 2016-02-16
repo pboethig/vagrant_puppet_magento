@@ -316,7 +316,7 @@ hhvm:
         error_reporting: '-1'
         date.timezone: UTC
 mariadb:
-    install: '1'
+    install: '0'
     settings:
         version: '10.1'
         root_password: '123'
@@ -336,7 +336,7 @@ mariadb:
             privileges:
                 - ALL
 mysql:
-    install: '0'
+    install: '1'
     settings:
         version: '5.5'
         root_password: '123'
@@ -348,7 +348,7 @@ mysql:
             password: '123'
     databases:
         mysqlnd_hjs1m25oatv1:
-            name: dbname
+            name: magento
             sql: ''
     grants:
         mysqlng_fx28va99h6ho:
