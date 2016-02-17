@@ -1,9 +1,0 @@
-app/code/local/Ibrams/CmsExtended    app/code/local/Ibrams/CmsExtended
-app/design/adminhtml/default/default/layout/ibrams_cmsextended.xml    app/design/adminhtml/default/default/layout/ibrams_cmsextended.xml
-app/design/adminhtml/default/default/template/ibrams_cmsextended    app/design/adminhtml/default/default/template/ibrams_cmsextended
-app/design/frontend/base/default/layout/ibrams_cmsextended.xml    app/design/frontend/base/default/layout/ibrams_cmsextended.xml
-app/etc/modules/Ibrams_CmsExtended.xml    app/etc/modules/Ibrams_CmsExtended.xml
-app/locale/en_US/Ibrams_CmsExtended.csv    app/locale/en_US/Ibrams_CmsExtended.csv
-skin/frontend/base/default/css/ibrams_cmsextended    skin/frontend/base/default/css/ibrams_cmsextended
-skin/frontend/base/default/images/ibrams_cmsextended    skin/frontend/base/default/images/ibrams_cmsextended
-skin/frontend/base/default/js/ibrams_cmsextended    skin/frontend/base/default/js/ibrams_cmsextended
