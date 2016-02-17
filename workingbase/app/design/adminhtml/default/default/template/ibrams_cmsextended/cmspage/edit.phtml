@@ -1,0 +1,161 @@
+<?php
+/**
+ * Ibrams_CmsExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Ibrams
+ * @package        Ibrams_CmsExtended
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+?>
+<div id="cmspage-edit-container" class="category-content">
+    <?php echo $this->getChildHtml('form') ?>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    function cmspageReset(url,useAjax) {
+        if (useAjax) {
+            var params = {active_tab_id:false};
+            updateContent(url, params);
+        } else {
+            location.href = url;
+        }
+    }
+    function cmspageDelete(url, useAjax, cmspageId) {
+        if (confirm('<?php echo Mage::helper('ibrams_cmsextended')->__('Are you sure?') ?>')) {
+            if (useAjax) {
+                tree.nodeForDelete = cmspageId;
+                updateContent(url, {}, true);
+            } else {
+                location.href = url;
+            }
+        }
+    }
+
+function cmspagePreview(url, useAjax, cmspageId) {
+
+    if(cmspageId < 1) {
+
+        alert('<?php echo Mage::helper('ibrams_cmsextended')->__('Choose at leat 1 cmspage.') ?>');
+        return false;
+    }
+
+
+    window.location.href='/ibrams_cmsextended/cmspage/view/id/'+cmspageId;
+}
+
+
+
+    function updateContent(url, params, refreshTree) {
+        if (!params) {
+            params = {};
+        }
+        if (!params.form_key) {
+            params.form_key = FORM_KEY;
+        }
+        toolbarToggle.stop();
+        var cmspageContainer = $('cmspage-edit-container');
+        var messagesContainer = $('messages');
+        var thisObj = this;
+        new Ajax.Request(url + (url.match(new RegExp('\\?')) ? '&isAjax=true' : '?isAjax=true' ), {
+            parameters:  params,
+            evalScripts: true,
+            onComplete: function () {
+                setTimeout(function() {
+                    try {
+                        if (refreshTree) {
+                            thisObj.refreshTreeArea();
+                        }
+                        toolbarToggle.start();
+                    }
+                    catch (e) {
+                        alert(e.message);
+                    };
+                }, 25);
+            },
+            onSuccess: function(transport) {
+                try {
+                    if (transport.responseText.isJSON()) {
+                        var response = transport.responseText.evalJSON();
+                        var needUpdate = true;
+                        if (response.error) {
+                            alert(response.message);
+                            needUpdate = false;
+                        }
+                        if (response.ajaxExpired && response.ajaxRedirect) {
+                            setLocation(response.ajaxRedirect);
+                            needUpdate = false;
+                        }
+                        if (needUpdate) {
+                            if (response.content) {
+                                $(cmspageContainer).update(response.content);
+                            }
+                            if (response.messages) {
+                                $(messagesContainer).update(response.messages);
+                            }
+                        }
+                    } else {
+                        $(cmspageContainer).update(transport.responseText);
+                    }
+                }
+                catch (e) {
+                    $(cmspageContainer).update(transport.responseText);
+                }
+            }
+        });
+    }
+    function refreshTreeArea(transport) {
+        if (tree && window.editingCmspageBreadcrumbs) {
+            if (tree.nodeForDelete) {
+                var node = tree.getNodeById(tree.nodeForDelete);
+                tree.nodeForDelete = false;
+                if (node) {
+                    node.parentNode.removeChild(node);
+                    tree.currentNodeId = false;
+                }
+            } else if (tree.addNodeTo) {
+                var parent = tree.getNodeById(tree.addNodeTo);
+                tree.addNodeTo = false;
+                if (parent) {
+                    var node = new Ext.tree.AsyncTreeNode(editingCmspageBreadcrumbs[editingCmspageBreadcrumbs.length - 1]);
+                    node.loaded = true;
+                    tree.currentNodeId = node.id;
+                    parent.appendChild(node);
+                    if (parent.expanded) {
+                        tree.selectCurrentNode();
+                    } else {
+                        var timer;
+                        parent.expand();
+                        var f = function() {
+                            if (parent.expanded) {
+                                clearInterval(timer);
+                                tree.selectCurrentNode();
+                            }
+                        };
+                        timer = setInterval(f, 200);
+                    }
+                }
+            }
+            for (var i = 0; i < editingCmspageBreadcrumbs.length; i++) {
+                var node = tree.getNodeById(editingCmspageBreadcrumbs[i].id);
+                if (node) {
+                    node.setText(editingCmspageBreadcrumbs[i].text);
+                }
+            }
+        }
+    }
+    function displayLoadingMask() {
+        var loaderArea = $$('#html-body .wrapper')[0];
+        Position.clone($(loaderArea), $('loading-mask'), {offsetLeft:-2});
+        toggleSelectsUnderBlock($('loading-mask'), false);
+        Element.show('loading-mask');
+    }
+//]]>
+</script>

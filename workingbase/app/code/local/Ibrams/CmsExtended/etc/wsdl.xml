@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:typens="urn:{{var wsdl.name}}" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+    name="{{var wsdl.name}}" targetNamespace="urn:{{var wsdl.name}}">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Magento">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" />
+            <complexType name="cmsextendedCmspageListEntity">
+                <all>
+                    <element name="entity_id" type="xsd:string" minOccurs="1" />
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="version" type="xsd:string" minOccurs="1" />
+                    <element name="accessroles" type="xsd:string" minOccurs="1" />
+                    <element name="startdate" type="xsd:string" minOccurs="0" />
+                    <element name="enddate" type="xsd:string" minOccurs="0" />
+                    <element name="type" type="xsd:string" minOccurs="0" />
+                    <element name="showassociatedproducts" type="xsd:string" minOccurs="1" />
+                    <element name="showassociatecategories" type="xsd:string" minOccurs="1" />
+                    <element name="permittedroleactions" type="xsd:string" minOccurs="1" />
+                    <element name="htmlcontent" type="xsd:string" minOccurs="1" />
+                    <element name="layout" type="xsd:string" minOccurs="1" />
+                    <element name="layoutupdate" type="xsd:string" minOccurs="0" />
+                    <element name="author" type="xsd:string" minOccurs="1" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="parent_id" type="xsd:string" minOccurs="0" />
+                    <element name="path" type="xsd:string" minOccurs="0" />
+                    <element name="position" type="xsd:string" minOccurs="0" />
+                    <element name="level" type="xsd:string" minOccurs="0" />
+                    <element name="children_count" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+
+                    <element name="created_at" type="xsd:string" minOccurs="1" />
+                    <element name="updated_at" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageListEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:cmsextendedCmspageListEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="cmsextendedCmspageAddEntity">
+                <all>
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="version" type="xsd:string" minOccurs="1" />
+                    <element name="accessroles" type="xsd:string" minOccurs="1" />
+                    <element name="startdate" type="xsd:string" minOccurs="0" />
+                    <element name="enddate" type="xsd:string" minOccurs="0" />
+                    <element name="type" type="xsd:string" minOccurs="0" />
+                    <element name="showassociatedproducts" type="xsd:string" minOccurs="1" />
+                    <element name="showassociatecategories" type="xsd:string" minOccurs="1" />
+                    <element name="permittedroleactions" type="xsd:string" minOccurs="1" />
+                    <element name="htmlcontent" type="xsd:string" minOccurs="1" />
+                    <element name="layout" type="xsd:string" minOccurs="1" />
+                    <element name="layoutupdate" type="xsd:string" minOccurs="0" />
+                    <element name="author" type="xsd:string" minOccurs="1" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="parent_id" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageUpdateEntity">
+                <all>
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="version" type="xsd:string" minOccurs="1" />
+                    <element name="accessroles" type="xsd:string" minOccurs="1" />
+                    <element name="startdate" type="xsd:string" minOccurs="0" />
+                    <element name="enddate" type="xsd:string" minOccurs="0" />
+                    <element name="type" type="xsd:string" minOccurs="0" />
+                    <element name="showassociatedproducts" type="xsd:string" minOccurs="1" />
+                    <element name="showassociatecategories" type="xsd:string" minOccurs="1" />
+                    <element name="permittedroleactions" type="xsd:string" minOccurs="1" />
+                    <element name="htmlcontent" type="xsd:string" minOccurs="1" />
+                    <element name="layout" type="xsd:string" minOccurs="1" />
+                    <element name="layoutupdate" type="xsd:string" minOccurs="0" />
+                    <element name="author" type="xsd:string" minOccurs="1" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="parent_id" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageInfoEntity">
+                <all>
+                    <element name="entity_id" type="xsd:string" minOccurs="1" />
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="version" type="xsd:string" minOccurs="1" />
+                    <element name="accessroles" type="xsd:string" minOccurs="1" />
+                    <element name="startdate" type="xsd:string" minOccurs="0" />
+                    <element name="enddate" type="xsd:string" minOccurs="0" />
+                    <element name="type" type="xsd:string" minOccurs="0" />
+                    <element name="showassociatedproducts" type="xsd:string" minOccurs="1" />
+                    <element name="showassociatecategories" type="xsd:string" minOccurs="1" />
+                    <element name="permittedroleactions" type="xsd:string" minOccurs="1" />
+                    <element name="htmlcontent" type="xsd:string" minOccurs="1" />
+                    <element name="layout" type="xsd:string" minOccurs="1" />
+                    <element name="layoutupdate" type="xsd:string" minOccurs="0" />
+                    <element name="author" type="xsd:string" minOccurs="1" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="parent_id" type="xsd:string" minOccurs="0" />
+                    <element name="path" type="xsd:string" minOccurs="0" />
+                    <element name="position" type="xsd:string" minOccurs="0" />
+                    <element name="level" type="xsd:string" minOccurs="0" />
+                    <element name="children_count" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+
+                    <element name="created_at" type="xsd:string" minOccurs="1" />
+                    <element name="updated_at" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageMoveEntity">
+                <all>
+                <element name="cmspage_id" type="xsd:string" minOccurs="1" />
+                <element name="parent_id" type="xsd:string" minOccurs="1" />
+                <element name="after_id" type="xsd:string" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageAssignProductEntity">
+                <all>
+                <element name="cmspageId" type="xsd:string" minOccurs="1" />
+                <element name="productId" type="xsd:string" minOccurs="1" />
+                <element name="position" type="xsd:string" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageUnassignProductEntity">
+                <all>
+                <element name="cmspageId" type="xsd:string" minOccurs="1" />
+                <element name="productId" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageAssignCategoryEntity">
+                <all>
+                <element name="cmspageId" type="xsd:string" minOccurs="1" />
+                <element name="categoryId" type="xsd:string" minOccurs="1" />
+                <element name="position" type="xsd:string" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageUnassignCategoryEntity">
+                <all>
+                <element name="cmspageId" type="xsd:string" minOccurs="1" />
+                <element name="categoryId" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+                    <complexType name="cmsextendedCmspageCommentListEntity">
+                <all>
+                    <element name="comment_id" type="xsd:string" minOccurs="1" />
+                    <element name="cmspage_id" type="xsd:string" minOccurs="1" />
+                    <element name="title" type="xsd:string" minOccurs="1" />
+                    <element name="comment" type="xsd:string" minOccurs="1" />
+                    <element name="status" type="xsd:string" minOccurs="1" />
+                    <element name="customer_id" type="xsd:string" minOccurs="1" />
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="email" type="xsd:string" minOccurs="1" />
+                    <element name="created_at" type="xsd:string" minOccurs="1" />
+                    <element name="updated_at" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="cmsextendedCmspageCommentListEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:cmsextendedCmspageCommentListEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+        </schema>
+    </types>
+    <message name="cmsextendedCmspageListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="filters" type="typens:filters"/>
+    </message>
+    <message name="cmsextendedCmspageListResponse">
+        <part name="result" type="typens:cmsextendedCmspageListEntityArray" />
+    </message>
+    <message name="cmsextendedCmspageInfoRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="cmspageId" type="xsd:string" />
+    </message>
+    <message name="cmsextendedCmspageInfoResponse">
+        <part name="result" type="typens:cmsextendedCmspageInfoEntity" />
+    </message>
+    <message name="cmsextendedCmspageAddRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="data" type="typens:cmsextendedCmspageAddEntity" />
+    </message>
+    <message name="cmsextendedCmspageAddResponse">
+        <part name="result" type="xsd:int"/>
+    </message>
+    <message name="cmsextendedCmspageUpdateRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="cmspageId" type="xsd:string" />
+        <part name="data" type="typens:cmsextendedCmspageUpdateEntity" />
+    </message>
+    <message name="cmsextendedCmspageUpdateResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="cmsextendedCmspageRemoveRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="cmspageId" type="xsd:string" />
+    </message>
+    <message name="cmsextendedCmspageRemoveResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+        <message name="cmsextendedCmspageMoveRequest">
+            <part name="session_id" type="xsd:string" />
+            <part name="cmspage_id" type="xsd:string" />
+            <part name="parent_id" type="xsd:string" />
+            <part name="after_id" type="xsd:string" />
+        </message>
+        <message name="cmsextendedCmspageMoveResponse">
+            <part name="id" type="xsd:boolean"/>
+        </message>
+        <message name="cmsextendedCmspageAssignProductRequest">
+            <part name="sessionId" type="xsd:string" />
+            <part name="cmspage_id" type="xsd:string" />
+            <part name="product_id" type="xsd:string" />
+            <part name="position" type="xsd:string" />
+        </message>
+        <message name="cmsextendedCmspageAssignProductResponse">
+            <part name="result" type="xsd:boolean" />
+        </message>
+        <message name="cmsextendedCmspageUnassignProductRequest">
+            <part name="session_id" type="xsd:string" />
+            <part name="cmspage_id" type="xsd:string" />
+            <part name="product_id" type="xsd:string" />
+        </message>
+        <message name="cmsextendedCmspageUnassignProductResponse">
+            <part name="result" type="xsd:boolean" />
+        </message>
+        <message name="cmsextendedCmspageAssignCategoryRequest">
+            <part name="sessionId" type="xsd:string" />
+            <part name="cmspage_id" type="xsd:string" />
+            <part name="category_id" type="xsd:string" />
+            <part name="position" type="xsd:string" />
+        </message>
+        <message name="cmsextendedCmspageAssignCategoryResponse">
+            <part name="result" type="xsd:boolean" />
+        </message>
+        <message name="cmsextendedCmspageUnassignCategoryRequest">
+            <part name="session_id" type="xsd:string" />
+            <part name="cmspage_id" type="xsd:string" />
+            <part name="category_id" type="xsd:string" />
+        </message>
+        <message name="cmsextendedCmspageUnassignCategoryResponse">
+            <part name="result" type="xsd:boolean" />
+        </message>
+        <message name="cmsextendedCmspageCommentListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="filters" type="typens:filters"/>
+    </message>
+    <message name="cmsextendedCmspageCommentListResponse">
+        <part name="result" type="typens:cmsextendedCmspageCommentListEntityArray" />
+    </message>
+    <message name="cmsextendedCmspageCommentUpdateStatusRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="commentId" type="xsd:string" />
+        <part name="status" type="xsd:string" />
+    </message>
+    <message name="cmsextendedCmspageCommentUpdateStatusResponse">
+        <part name="result" type="xsd:int" />
+    </message>
+    <portType name="{{var wsdl.handler}}PortType">
+        <operation name="cmsextendedCmspageList">
+            <documentation>Retrieve list of cmspage</documentation>
+            <input message="typens:cmsextendedCmspageListRequest" />
+            <output message="typens:cmsextendedCmspageListResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageInfo">
+            <documentation>Retrieve cmspage info</documentation>
+            <input message="typens:cmsextendedCmspageInfoRequest" />
+            <output message="typens:cmsextendedCmspageInfoResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageAdd">
+            <documentation>Add cmspage</documentation>
+            <input message="typens:cmsextendedCmspageAddRequest" />
+            <output message="typens:cmsextendedCmspageAddResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageUpdate">
+            <documentation>Update cmspage</documentation>
+            <input message="typens:cmsextendedCmspageUpdateRequest" />
+            <output message="typens:cmsextendedCmspageUpdateResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageRemove">
+            <documentation>Remove cmspage</documentation>
+            <input message="typens:cmsextendedCmspageRemoveRequest" />
+            <output message="typens:cmsextendedCmspageRemoveResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageMove">
+            <documentation>Move cmspage in tree</documentation>
+            <input message="typens:cmsextendedCmspageMoveRequest" />
+            <output message="typens:cmsextendedCmspageMoveResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageAssignProduct">
+            <documentation>Assign product to cmspage</documentation>
+            <input message="typens:cmsextendedCmspageAssignProductRequest" />
+            <output message="typens:cmsextendedCmspageAssignProductResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageUnassignProduct">
+            <documentation>Remove product from cmspage</documentation>
+            <input message="typens:cmsextendedCmspageUnassignProductRequest" />
+            <output message="typens:cmsextendedCmspageUnassignProductResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageAssignCategory">
+            <documentation>Assign category to cmspage</documentation>
+            <input message="typens:cmsextendedCmspageAssignCategoryRequest" />
+            <output message="typens:cmsextendedCmspageAssignCategoryResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageUnassignCategory">
+            <documentation>Remove category from cmspage</documentation>
+            <input message="typens:cmsextendedCmspageUnassignCategoryRequest" />
+            <output message="typens:cmsextendedCmspageUnassignCategoryResponse" />
+        </operation>
+            <operation name="cmsextendedCmspageCommentList">
+            <documentation>Retrieve list of cmspage comments</documentation>
+            <input message="typens:cmsextendedCmspageCommentListRequest" />
+            <output message="typens:cmsextendedCmspageCommentListResponse" />
+        </operation>
+        <operation name="cmsextendedCmspageCommentUpdateStatus">
+            <documentation>Change cmspage comment status</documentation>
+            <input message="typens:cmsextendedCmspageCommentUpdateStatusRequest" />
+            <output message="typens:cmsextendedCmspageCommentUpdateStatusResponse" />
+        </operation>
+    </portType>
+    <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="cmsextendedCmspageList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageInfo">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageAdd">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageUpdate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageRemove">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageMove">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageAssignProduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageUnassignProduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageAssignCategory">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageUnassignCategory">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+            <operation name="cmsextendedCmspageCommentList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="cmsextendedCmspageCommentUpdateStatus">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+    <service name="{{var wsdl.name}}Service">
+        <port name="{{var wsdl.handler}}Port" binding="typens:{{var wsdl.handler}}Binding">
+            <soap:address location="{{var wsdl.url}}" />
+        </port>
+    </service>
+</definitions>

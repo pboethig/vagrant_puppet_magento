@@ -1,0 +1,72 @@
+<?php
+/**
+ * Ibrams_CmsExtended extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Ibrams
+ * @package        Ibrams_CmsExtended
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Cmspage view widget template
+ *
+ * @category    Ibrams
+ * @package     Ibrams_CmsExtended
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php $_cmspage = $this->getCurrentCmspage();?>
+<?php if ($_cmspage) :?>
+    <div class="cmspage-widget-view">
+        <h3><?php echo $_cmspage->getName()?></h3>
+        <div>
+            <div class="name-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__('name');?>:<?php echo $_cmspage->getName();?>
+            </div>
+            <div class="version-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__('version');?>:<?php echo $_cmspage->getVersion();?>
+            </div>
+            <div class="accessroles-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("accessroles");?>:<?php echo Mage::getSingleton('ibrams_cmsextended/cmspage_attribute_source_accessroles')->getOptionText($_cmspage->getAccessroles());?>
+            </div>
+            <div class="startdate-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("startdate");?>: <?php echo Mage::helper('core')->formatDate($_cmspage->getStartdate(), 'full');?>
+            </div>
+            <div class="enddate-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("enddate");?>: <?php echo Mage::helper('core')->formatDate($_cmspage->getEnddate(), 'full');?>
+            </div>
+            <div class="type-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__('type');?>:<?php echo $_cmspage->getType();?>
+            </div>
+            <div class="showassociatedproducts-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("showassociatedproducts");?>:<?php echo ($_cmspage->getShowassociatedproducts() == 1) ? Mage::helper('ibrams_cmsextended')->__('Yes') : Mage::helper('ibrams_cmsextended')->__('No') ?>
+            </div>
+            <div class="showassociatecategories-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("showassociatedcategories");?>:<?php echo ($_cmspage->getShowassociatecategories() == 1) ? Mage::helper('ibrams_cmsextended')->__('Yes') : Mage::helper('ibrams_cmsextended')->__('No') ?>
+            </div>
+            <div class="permittedroleactions-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("permittedroleactions");?>:<?php echo Mage::getSingleton('ibrams_cmsextended/cmspage_attribute_source_permittedroleactions')->getOptionText($_cmspage->getPermittedroleactions());?>
+            </div>
+            <div class="htmlcontent-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__('htmlcontent');?>:<?php echo $_cmspage->getHtmlcontent();?>
+            </div>
+            <div class="layout-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__("layout");?>:<?php echo Mage::getSingleton('ibrams_cmsextended/cmspage_attribute_source_layout')->getOptionText($_cmspage->getLayout());?>
+            </div>
+            <div class="layoutupdate-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__('layoutupdate');?>:<?php echo $_cmspage->getLayoutupdate();?>
+            </div>
+            <div class="author-widget">
+                <?php echo Mage::helper('ibrams_cmsextended')->__('author');?>:<?php echo $_cmspage->getAuthor();?>
+            </div>
+
+        </div>
+    </div>
+<?php endif;?>
