@@ -1,8 +1,8 @@
 This is a vagrant image using puphpet.com to generate  a common magento installation.
 
 Puppet installes on the client-os
-- MariaDB (Dropin replacement for MySql)
-- php 5.6 (PHP-FPM) 
+- Replaced Maria with more stable mysql
+- Replaced PHP5 with php7
 - apache 2.4
 - look in puppetconfig to extend client (redis, rabbitmq, python and some more default puphpet packages are preconfigured and only have to activated for installation )
 - n98-magerun
@@ -12,6 +12,7 @@ Puppet installes on the client-os
 Installed Magento-Packages
 - Magentoversion: 1.9.2.3 Core
 - Sampladata
+- PHP7 compatibility
 
 Prerequisits
 - Installed Virtualbox
